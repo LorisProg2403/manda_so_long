@@ -1,0 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_map.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/24 15:21:17 by lgaume            #+#    #+#             */
+/*   Updated: 2023/12/24 15:21:18 by lgaume           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../inc/so_long.h"
+
+void	get_h_and_w(t_game *game)
+{
+	int	h;
+
+	h = 0;
+	game->width = ft_strlen(game->map[0]) - 1;
+	while (game->map[h])
+		h++;
+	game->height = h - 1;
+}
+
+void	set_points(t_game *game)
+{
+	int	i;
+	int	j;
+
+	game->points = malloc(sizeof(t_point *) * (game->height + 1));
+	i = 0;
+	while (i <= game->height)
+	{
+		game->points[i] = malloc(sizeof(t_point) * (game->width + 1));
+		j = 0;
+		while (j <= game->width)
+		{
+			game->points[i][j] = n_point(j, i, game->map[i][j]);
+			if (game->map[i][j] == PLAYER)
+				game->player = n_point(j, i, 'P');
+			if (game->map[i][j] == ITEM)
+				game->items++;
+			j++;
+		}
+		i++;
+	}
+}
+
+void	set_map(t_game *game)
+{
+	get_h_and_w(game);
+	game->moves = 0;
+	set_points(game);
+}
