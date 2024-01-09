@@ -20,7 +20,7 @@
 # include <fcntl.h>
 
 // INIT_MAP
-t_res		init_map(char *s, t_data data);
+t_res		init_map(char *s, t_data *data);
 int			get_map(char *s, t_game *game);
 t_res		check_map(t_data data);
 void		set_map(t_game *game);
@@ -33,7 +33,7 @@ void		free_points(t_game game);
 void		free_map(t_game game);
 
 // GAME
-t_res		start_game(t_data data);
+void		start_game(t_data *data);
 void		add_img(t_data data, int x, int y, t_point p);
 char		*get_path(t_point p);
 void		new_img(t_data data, int x, int y, char *path);

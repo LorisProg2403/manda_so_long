@@ -22,12 +22,12 @@
 # define KEY_ESC 53
 
 // Images path
-# define WALL_IMG_PATH "./img/crash/wall.xpm"
-# define PATH_IMG_PATH "./img/crash/grass.xpm"
-# define EXIT_IMG_PATH "./img/crash/exit.xpm"
-# define ITEM_IMG_PATH "./img/crash/apple.xpm"
-# define PLAYER_IMG_PATH "./img/crash/player.xpm"
-# define BLACK_IMG_PATH "./img/crash/black.xpm"
+# define WALL_IMG_PATH "./img/wall.xpm"
+# define PATH_IMG_PATH "./img/grass.xpm"
+# define EXIT_IMG_PATH "./img/exit.xpm"
+# define ITEM_IMG_PATH "./img/apple.xpm"
+# define PLAYER_IMG_PATH "./img/player.xpm"
+# define BLACK_IMG_PATH "./img/black.xpm"
 
 // Data
 # define IMG_SIZE 50

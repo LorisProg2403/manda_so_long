@@ -50,7 +50,7 @@ void	move(t_data data, int add_x, int add_y)
 int	handle_key(int key, t_data *data)
 {
 	if (key == KEY_Q || key == KEY_ESC)
-		endgame(*data);
+		exit(1);//endgame(*data);
 	if (key == KEY_W)
 		move(*data, 0, -1);
 	if (key == KEY_A)

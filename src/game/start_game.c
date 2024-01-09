@@ -12,26 +12,29 @@
 
 #include "../../inc/so_long.h"
 
-t_res	start_game(t_data data)
+void	start_game(t_data *data)
 {
 	int	i;
 	int	j;
+	void	*mlx_ini;
+	void	*mlx_win;
 
-	data.mlx = mlx_init();
-	data.win = mlx_new_window(data.mlx, IMG_SIZE * data.game->width,
-			IMG_SIZE * data.game->height, "SO_LONG");
+	mlx_ini = mlx_init();
+	mlx_win = mlx_new_window(mlx_ini, IMG_SIZE * (data->game->width + 1),
+			IMG_SIZE * (data->game->height + 1), "SO_LONG");
+	data->mlx = mlx_ini;
+	data->win = mlx_win;
 	i = 0;
-	while (i <= data.game->height)
+	while (i <= data->game->height)
 	{
 		j = 0;
-		while (j <= data.game->width)
+		while (j <= data->game->width)
 		{
-			add_img(data, j, i, data.game->points[i][j]);
+			add_img(*data, j, i, data->game->points[i][j]);
 			j++;
 		}
 		i++;
 	}
-	mlx_key_hook(data.mlx, handle_key, &data);
-	mlx_loop(data.mlx);
-	return (new_res(0, 0, NULL, data));
+	mlx_key_hook((*data).win, handle_key, data);
+	mlx_loop(mlx_ini);
 }

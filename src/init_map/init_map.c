@@ -21,18 +21,18 @@
  * check if the map is winnable
  */
 
-t_res	init_map(char *s, t_data data)
+t_res	init_map(char *s, t_data *data)
 {
 	t_res	res;
 
-	if (get_map(s, data.game))
-		return (new_res(1, 1, "Can't open/find map!\n", data));
-	res = check_map(data);
+	if (get_map(s, data->game))
+		return (new_res(1, 1, "Can't open/find map!\n", *data));
+	res = check_map(*data);
 	if (res.state)
 		return (res);
-	set_map(data.game);
-	res = is_winnable(data);
+	set_map(data->game);
+	res = is_winnable(*data);
 	if (res.state)
 		return (res);
-	return (new_res(0, 0, NULL, data));
+	return (new_res(0, 0, NULL, *data));
 }
