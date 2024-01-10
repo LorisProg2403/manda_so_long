@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 22:29:55 by lgaume            #+#    #+#             */
-/*   Updated: 2023/12/23 22:29:57 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/10 13:00:20 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_res(t_res res)
 {
 	if (res.state)
 	{
-		printf(BRED"%s\n"RESET, res.msg);
+		ft_printf(BRED"%s\n"RESET, res.msg);
 		return (1);
 	}
 	return (0);
@@ -109,6 +109,6 @@ int	main(int ac, char **av)
 	res = init_map(av[1], &data);
 	if (check_res(res))
 		return (1);
-	test_map(data.game);
+	//test_map(data.game);
 	start_game(&data);
 }

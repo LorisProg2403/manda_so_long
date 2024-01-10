@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 15:53:15 by lgaume            #+#    #+#             */
-/*   Updated: 2023/12/24 15:53:17 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/10 13:08:51 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 void	start_game(t_data *data)
 {
-	int		i;
-	int		j;
+	//int		i;
+	//int		j;
 	void	*mlx_ini;
-	void	*mlx_win;
+	//void	*mlx_win;
 
+	ft_printf("WEEEEEESH!\n");
 	mlx_ini = mlx_init();
-	mlx_win = mlx_new_window(mlx_ini, IMG_SIZE * (data->game->width + 1),
+	ft_printf("OMMMMMMMMG!\n");
+	(void)data;
+	/*mlx_win = mlx_new_window(mlx_ini, IMG_SIZE * (data->game->width + 1),
 			IMG_SIZE * (data->game->height + 1), "SO_LONG");
 	data->mlx = mlx_ini;
 	data->win = mlx_win;
@@ -35,6 +38,6 @@ void	start_game(t_data *data)
 		}
 		i++;
 	}
-	mlx_key_hook((*data).win, handle_key, data);
-	mlx_loop(mlx_ini);
+	mlx_key_hook((*data).win, handle_key, data);*/
+	//mlx_loop(mlx_ini);
 }

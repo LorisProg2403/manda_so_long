@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 15:21:17 by lgaume            #+#    #+#             */
-/*   Updated: 2023/12/24 15:21:18 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/10 12:29:31 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ void	set_map(t_game *game)
 {
 	get_h_and_w(game);
 	game->moves = 0;
+	game->items = 0;
+	game->exit_reached = false;
+	game->items_reached = false;
 	set_points(game);
 }

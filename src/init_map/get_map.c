@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 00:58:28 by lgaume            #+#    #+#             */
-/*   Updated: 2023/12/24 00:58:32 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/10 13:25:34 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int	get_map(char *s, t_game *game)
 	fd = open((*game).path, O_RDONLY);
 	if (fd < 0)
 		return (1);
-	(*game).map = (char **)malloc(sizeof(char *) * n_lines);
+	//(*game).map = (char **)malloc(sizeof(char *) * (n_lines + 1));
+	(*game).map = (char **)malloc(sizeof(char *) * 10000);
 	i = 0;
 	while (1)
 	{
@@ -57,6 +58,7 @@ int	get_map(char *s, t_game *game)
 		free(line);
 		i++;
 	}
+	game->map[i] = 0;
 	close(fd);
 	free(game->path);
 	return (0);

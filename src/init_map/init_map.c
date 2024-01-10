@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 23:43:26 by lgaume            #+#    #+#             */
-/*   Updated: 2023/12/23 23:43:27 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/10 12:25:37 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ t_res	init_map(char *s, t_data *data)
 	res = is_winnable(*data);
 	if (res.state)
 		return (res);
-	return (new_res(0, 0, NULL, *data));
+	return (new_res(0, 0, "", *data));
 }
