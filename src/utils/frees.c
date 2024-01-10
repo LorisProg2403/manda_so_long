@@ -30,7 +30,7 @@ void	free_map(t_game game)
 	int	i;
 
 	i = 0;
-	while (i <= game.height)
+	while (i <= game.height + 1)
 	{
 		free(game.map[i]);
 		i++;

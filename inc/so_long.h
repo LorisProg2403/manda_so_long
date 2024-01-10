@@ -39,7 +39,6 @@ char		*get_path(t_point p);
 void		new_img(t_data data, int x, int y, char *path);
 void		get_corr(t_point *c, t_point p, int width, int height);
 int			handle_key(int key, t_data *data);
-
 // SO_LONG.C
 void		endgame(t_data data);
 

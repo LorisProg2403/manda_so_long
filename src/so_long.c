@@ -17,6 +17,7 @@ void	endgame(t_data data)
 	free_points(*data.game);
 	free_map(*data.game);
 	mlx_destroy_window(data.mlx, data.win);
+	exit(EXIT_SUCCESS);
 }
 
 int	check_res(t_res res)

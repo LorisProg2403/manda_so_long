@@ -14,8 +14,8 @@
 
 void	start_game(t_data *data)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	void	*mlx_ini;
 	void	*mlx_win;
 

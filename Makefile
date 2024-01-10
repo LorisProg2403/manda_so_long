@@ -12,7 +12,7 @@
 
 NAME = so_long
 
-CC = gcc
+CC = gcc -g
 FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
@@ -73,7 +73,7 @@ libft_clean:
 						@echo "$(YELLOW)Cleaned Libft$(RESET)"
 
 mlx:
-						@make -s -C ./mlx
+						@make -C ./mlx
 						@echo "$(BLUE)[✓] MLX compiled$(RESET)"
 
 mlx_clean:
