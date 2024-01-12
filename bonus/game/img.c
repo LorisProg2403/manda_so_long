@@ -29,6 +29,11 @@ void	get_corr(t_point *c, t_point p, int width, int height)
 		(*c).x = p.x * IMG_SIZE + 3;
 		(*c).y = p.y * IMG_SIZE + 3;
 	}
+	else if (height == 40)
+	{
+		c->x = p.x * IMG_SIZE + 5;
+		c->y = p.y * IMG_SIZE + 5;
+	}
 	else
 	{
 		(*c).x = p.x * IMG_SIZE;
@@ -64,12 +69,15 @@ char	*get_path(t_point p)
 		return (PLAYER_IMG_PATH);
 	if (p.value == WALL)
 		return (WALL_IMG_PATH);
+	if (p.value == TNT)
+		return (TNT_IMG_PATH);
 	return (PATH_IMG_PATH);
 }
 
 void	add_img(t_data data, int x, int y, t_point p)
 {
-	if (p.value == EXIT || p.value == ITEM || p.value == PLAYER)
+	if (p.value == EXIT || p.value == ITEM || p.value == PLAYER ||
+		p.value == TNT)
 	{
 		new_img(data, x, y, PATH_IMG_PATH);
 		new_img(data, x, y, get_path(p));
