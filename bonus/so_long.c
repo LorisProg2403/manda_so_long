@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 22:29:55 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/10 13:00:20 by lgaume           ###   ########.fr       */
+/*   Created: 2024/01/12 12:30:58 by lgaume            #+#    #+#             */
+/*   Updated: 2024/01/12 12:31:00 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../inc_bonus/so_long_bonus.h"
 
 void	endgame(t_data data)
 {
@@ -45,3 +45,10 @@ int	main(int ac, char **av)
 		return (1);
 	start_game(&data);
 }
+/*TODO :
+ * Text for the moves on the window
+ * Change mlx functions for the size of the string
+ * Add win screen (full black and text ?)
+ * Multiple map ?
+ * Sprites for movement (Redraw all the map everytime ?)
+ * Enemies (first static and then maybe moving)*/
