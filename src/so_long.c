@@ -112,3 +112,10 @@ int	main(int ac, char **av)
 	//test_map(data.game);
 	start_game(&data);
 }
+/*TODO :
+ * Text for the moves on the window
+ * Change mlx functions for the size of the string
+ * Add win screen (full black and text ?)
+ * Multiple map ?
+ * Sprites for movement (Redraw all the map everytime ?)
+ * Enemies (first static and then maybe moving)*/

@@ -46,8 +46,7 @@ int	get_map(char *s, t_game *game)
 	fd = open((*game).path, O_RDONLY);
 	if (fd < 0)
 		return (1);
-	//(*game).map = (char **)malloc(sizeof(char *) * (n_lines + 1));
-	(*game).map = (char **)malloc(sizeof(char *) * 10000);
+	(*game).map = (char **)malloc(sizeof(char *) * (n_lines + 1));
 	i = 0;
 	while (1)
 	{

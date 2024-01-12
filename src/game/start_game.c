@@ -14,16 +14,13 @@
 
 void	start_game(t_data *data)
 {
-	//int		i;
-	//int		j;
+	int		i;
+	int		j;
 	void	*mlx_ini;
-	//void	*mlx_win;
+	void	*mlx_win;
 
-	ft_printf("WEEEEEESH!\n");
 	mlx_ini = mlx_init();
-	ft_printf("OMMMMMMMMG!\n");
-	(void)data;
-	/*mlx_win = mlx_new_window(mlx_ini, IMG_SIZE * (data->game->width + 1),
+	mlx_win = mlx_new_window(mlx_ini, IMG_SIZE * (data->game->width + 1),
 			IMG_SIZE * (data->game->height + 1), "SO_LONG");
 	data->mlx = mlx_ini;
 	data->win = mlx_win;
@@ -38,6 +35,7 @@ void	start_game(t_data *data)
 		}
 		i++;
 	}
-	mlx_key_hook((*data).win, handle_key, data);*/
-	//mlx_loop(mlx_ini);
+	mlx_key_hook((*data).win, handle_key, data);
+	mlx_hook(mlx_win, 17, 0, close_win, NULL);
+	mlx_loop(mlx_ini);
 }

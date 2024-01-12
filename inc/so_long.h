@@ -31,6 +31,7 @@ t_res		new_res(bool state, int code, char *msg, t_data data);
 t_point		n_point(int x, int y, char value);
 void		free_points(t_game game);
 void		free_map(t_game game);
+int			close_win(int n, void *params);
 
 // GAME
 void		start_game(t_data *data);

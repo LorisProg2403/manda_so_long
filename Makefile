@@ -29,7 +29,7 @@ MAGENTA = \033[1;35m
 RESET = \033[0m
 
 SRC = so_long
-SRC += utils/res utils/points utils/frees
+SRC += utils/res utils/points utils/frees utils/utils
 SRC += init_map/init_map init_map/get_map init_map/check_map init_map/set_map init_map/pathfinding
 SRC += game/img game/moves game/start_game
 SRCS 	= $(addprefix $(SRC_PATH), $(addsuffix .c, $(SRC)))
