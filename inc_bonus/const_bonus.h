@@ -26,8 +26,10 @@
 # define PATH_IMG_PATH "./img/grass.xpm"
 # define EXIT_IMG_PATH "./img/exit.xpm"
 # define ITEM_IMG_PATH "./img/apple.xpm"
-# define BLACK_IMG_PATH "./img/black.xpm"
 # define PLAYER_IMG_PATH "./img/player.xpm"
+# define BLACK_IMG_PATH "./img/bonus/black.xpm"
+# define TNT_IMG_PATH "./img/bonus/tnt.xpm"
+
 // Data
 # define IMG_SIZE 50
 
@@ -37,5 +39,6 @@
 # define ITEM 'C'
 # define EXIT 'E'
 # define PLAYER 'P'
+# define TNT 'T'
 
 #endif

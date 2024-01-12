@@ -12,6 +12,29 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
+int is_allowed(char **map)
+{
+	int		i;
+	int		j;
+	char	c;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			c = map[i][j];
+			if (c != WALL && c != PATH && c != PLAYER && c != EXIT
+				&& c != TNT && c != ITEM)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 int	is_correct(char **map)
 {
 	t_count	c;
@@ -24,11 +47,11 @@ int	is_correct(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == 'C')
+			if (map[i][j] == ITEM)
 				c.c++;
-			if (map[i][j] == 'P')
+			if (map[i][j] == PLAYER)
 				c.p++;
-			if (map[i][j] == 'E')
+			if (map[i][j] == EXIT)
 				c.e++;
 			j++;
 		}
@@ -91,6 +114,8 @@ int	wall_around(char **map)
 
 t_res	check_map(t_data data)
 {
+	if (is_allowed(data.game->map))
+		return (new_res(1, 4, "Map has unallowed character(s)!\n", data));
 	if (is_correct(data.game->map))
 		return (new_res(1, 4, "Map doesn't follow the rules!\n", data));
 	if (is_rectangle(data.game->map))

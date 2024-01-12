@@ -26,7 +26,6 @@
 # define PATH_IMG_PATH "./img/grass.xpm"
 # define EXIT_IMG_PATH "./img/exit.xpm"
 # define ITEM_IMG_PATH "./img/apple.xpm"
-# define BLACK_IMG_PATH "./img/black.xpm"
 # define PLAYER_IMG_PATH "./img/player.xpm"
 // Data
 # define IMG_SIZE 50

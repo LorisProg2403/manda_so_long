@@ -84,7 +84,6 @@ $(OBJ_BONUS_PATH)%.o: 	$(SRC_BONUS_PATH)%.c
 
 clean:
 						@$(RM) $(OBJ)
-						@echo "$(YELLOW)Cleaned so_long $(RESET)"
 
 fclean:					clean
 						@$(RM) $(NAME)
