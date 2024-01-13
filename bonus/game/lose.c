@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   victory.c                                          :+:      :+:    :+:   */
+/*   lose.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 11:48:34 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/13 11:48:35 by lgaume           ###   ########.fr       */
+/*   Created: 2024/01/13 12:14:20 by lgaume            #+#    #+#             */
+/*   Updated: 2024/01/13 12:14:21 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,16 @@ static void	clean_screen(t_data data)
 
 static void	display_text(t_data data)
 {
-	char	*move;
 	char	*info;
 
-	move = ft_strjoin("In ", ft_strjoin(ft_itoa(data.game->moves), " moves"));
 	info = "Press [Q] or close the window to exit!";
 	mlx_string_put(data.mlx, data.win, IMG_SIZE * (data.game->width / 2),
-		IMG_SIZE * (data.game->height / 2), 65280, "YOU WON !");
-	mlx_string_put(data.mlx, data.win, IMG_SIZE * (data.game->width / 2) - 5,
-		IMG_SIZE * (data.game->height / 2 + 1), 65535, move);
+		IMG_SIZE * (data.game->height / 2), 16711680, "YOU LOSE !");
 	mlx_string_put(data.mlx, data.win, IMG_SIZE * (data.game->width / 2 - 2),
-		IMG_SIZE * (data.game->height / 2 + 2), 65535, info);
-	free(move);
+		IMG_SIZE * (data.game->height / 2 + 1), 16711680, info);
 }
 
-void	victory(t_data data)
+void	lose(t_data data)
 {
 	clean_screen(data);
 	display_text(data);

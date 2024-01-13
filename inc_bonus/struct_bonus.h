@@ -42,7 +42,7 @@ typedef struct s_game
 	int			i_text_x;
 	bool		exit_reached;
 	bool		items_reached;
-	bool		is_won;
+	bool		is_over;
 	t_point		**points;
 	t_point		player;
 }	t_game;

@@ -63,7 +63,7 @@ void	set_map(t_game *game)
 	game->items = 0;
 	game->exit_reached = false;
 	game->items_reached = false;
-	game->is_won = false;
+	game->is_over = false;
 	set_points(game);
 	get_text_pos(game);
 }

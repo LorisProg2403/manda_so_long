@@ -12,13 +12,15 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
-void	handle_tnt(t_point pos, int add_x, int add_y, t_data data)
+int	handle_tnt(t_point pos, int add_x, int add_y, t_data data)
 {
 	if (data.game->points[pos.y + add_y][pos.x + add_x].value == TNT)
 	{
 		ft_printf(BRED"\nYou lost... try again!\n"RESET);
-		endgame(data);
+		lose(data);
+		return (1);
 	}
+	return (0);
 }
 
 void	handle_item(t_point pos, int add_x, int add_y, t_data data)
@@ -55,7 +57,8 @@ void	move(t_data data, int add_x, int add_y)
 	t_point	pos;
 
 	pos = data.game->player;
-	handle_tnt(pos, add_x, add_y, data);
+	if (handle_tnt(pos, add_x, add_y, data))
+		return ;
 	if (!has_access(data, pos, add_x, add_y))
 		return ;
 	data.game->moves++;
@@ -75,7 +78,7 @@ int	handle_key(int key, t_data *data)
 		ft_printf(BBLUE"\nGame closed\n"RESET);
 		endgame(*data);
 	}
-	if (data->game->is_won)
+	if (data->game->is_over)
 		return (1);
 	if (key == KEY_W)
 		move(*data, 0, -1);
