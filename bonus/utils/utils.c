@@ -16,6 +16,7 @@ int	close_win(int n, void *params)
 {
 	(void)n;
 	(void)params;
+	ft_printf(BBLUE"\nGame closed\n"RESET);
 	exit(EXIT_SUCCESS);
 	return (0);
 }

@@ -23,7 +23,7 @@ int	has_access(t_data data, t_point pos, int add_x, int add_y)
 		else
 		{
 			ft_printf(BGREEN"\nYou won in %d moves !\nWell played !\n"RESET,
-				data.game->moves);
+					  data.game->moves);
 			endgame(data);
 		}
 	}
@@ -54,7 +54,10 @@ void	move(t_data data, int add_x, int add_y)
 int	handle_key(int key, t_data *data)
 {
 	if (key == KEY_Q || key == KEY_ESC)
+	{
+		ft_printf(BBLUE"\nGame closed\n"RESET);
 		endgame(*data);
+	}
 	if (key == KEY_W)
 		move(*data, 0, -1);
 	if (key == KEY_A)

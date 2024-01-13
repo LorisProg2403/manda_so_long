@@ -97,7 +97,6 @@ bonus_clean:
 
 bonus_fclean:			bonus_clean
 						@$(RM) $(NAME_BONUS)
-						@echo "$(YELLOW)Cleaned so_long_bonus $(RESET)"
 
 bonus_re:				bonus_fclean bonus
 

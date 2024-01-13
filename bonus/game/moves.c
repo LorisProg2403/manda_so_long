@@ -12,6 +12,25 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
+void	handle_tnt(t_point pos, int add_x, int add_y, t_data data)
+{
+	if (data.game->points[pos.y + add_y][pos.x + add_x].value == TNT)
+	{
+		ft_printf(BRED"\nYou lost... try again!\n"RESET);
+		endgame(data);
+	}
+}
+
+void	handle_item(t_point pos, int add_x, int add_y, t_data data)
+{
+	if (data.game->points[pos.y + add_y][pos.x + add_x].value == ITEM)
+	{
+		data.game->items--;
+		data.game->points[pos.y + add_y][pos.x + add_x].value = PATH;
+		new_img(data, pos.x + add_x, pos.y + add_y, PATH_IMG_PATH);
+	}
+}
+
 int	has_access(t_data data, t_point pos, int add_x, int add_y)
 {
 	if (data.game->points[pos.y + add_y][pos.x + add_x].value == WALL)
@@ -23,7 +42,7 @@ int	has_access(t_data data, t_point pos, int add_x, int add_y)
 		else
 		{
 			ft_printf(BGREEN"\nYou won in %d moves !\nWell played !\n"RESET,
-				data.game->moves);
+					  data.game->moves);
 			endgame(data);
 		}
 	}
@@ -35,16 +54,12 @@ void	move(t_data data, int add_x, int add_y)
 	t_point	pos;
 
 	pos = data.game->player;
+	handle_tnt(pos, add_x, add_y, data);
 	if (!has_access(data, pos, add_x, add_y))
 		return ;
 	data.game->moves++;
 	ft_printf("%d moves\n", data.game->moves);
-	if (data.game->points[pos.y + add_y][pos.x + add_x].value == ITEM)
-	{
-		data.game->items--;
-		data.game->points[pos.y + add_y][pos.x + add_x].value = PATH;
-		new_img(data, pos.x + add_x, pos.y + add_y, PATH_IMG_PATH);
-	}
+	handle_item(pos, add_x, add_y, data);
 	new_img(data, pos.x, pos.y, PATH_IMG_PATH);
 	new_img(data, pos.x + add_x, pos.y + add_y, PLAYER_IMG_PATH);
 	data.game->player.x += add_x;
@@ -54,7 +69,10 @@ void	move(t_data data, int add_x, int add_y)
 int	handle_key(int key, t_data *data)
 {
 	if (key == KEY_Q || key == KEY_ESC)
+	{
+		ft_printf(BBLUE"\nGame closed\n"RESET);
 		endgame(*data);
+	}
 	if (key == KEY_W)
 		move(*data, 0, -1);
 	if (key == KEY_A)
