@@ -12,7 +12,7 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
-int is_allowed(char **map)
+int	is_allowed(char **map)
 {
 	int		i;
 	int		j;

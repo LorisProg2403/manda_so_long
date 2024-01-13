@@ -76,8 +76,8 @@ char	*get_path(t_point p)
 
 void	add_img(t_data data, int x, int y, t_point p)
 {
-	if (p.value == EXIT || p.value == ITEM || p.value == PLAYER ||
-		p.value == TNT)
+	if (p.value == EXIT || p.value == ITEM || p.value == PLAYER
+		||p.value == TNT)
 	{
 		new_img(data, x, y, PATH_IMG_PATH);
 		new_img(data, x, y, get_path(p));
