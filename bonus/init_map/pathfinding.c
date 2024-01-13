@@ -21,6 +21,8 @@ void	visit_point(int x, int y, int items, t_game *game)
 	p = game->points[y][x];
 	if (p.value == WALL)
 		return ;
+	if (p.value == TNT)
+		return ;
 	if (p.visited)
 		return ;
 	if (p.value == ITEM)

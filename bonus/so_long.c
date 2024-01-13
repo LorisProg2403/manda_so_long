@@ -62,6 +62,4 @@ int	main(int ac, char **av)
 	start_game(&data);
 }
 /*TODO :
- * Handle error code from t_res to free the used memory
- * Change pathfinding to handle TNT
  * Sprites for movement (Redraw all the map everytime ?)*/
