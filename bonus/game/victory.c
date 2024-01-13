@@ -21,7 +21,7 @@ static char	*merge_text(char *s, char *alloc)
 	return (out);
 }
 
-static char	*get_text(int n , char *s)
+static char	*get_text(int n, char *s)
 {
 	char	*out;
 	char	*itoa;

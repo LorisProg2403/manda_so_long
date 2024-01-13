@@ -24,8 +24,24 @@ int	check_res(t_res res)
 {
 	if (res.state)
 	{
-		ft_printf(BRED"%s\n"RESET, res.msg);
-		return (1);
+		if (res.code == MAP_NOT_OPEN)
+		{
+			ft_printf(BRED"%s\n"RESET, res.msg);
+			return (1);
+		}
+		if (res.code == MAP_ERROR)
+		{
+			free_map(*res.data.game);
+			ft_printf(BRED"%s\n"RESET, res.msg);
+			return (1);
+		}
+		else
+		{
+			free_map(*res.data.game);
+			free_points(*res.data.game);
+			ft_printf(BRED"%s\n"RESET, res.msg);
+			return (1);
+		}
 	}
 	return (0);
 }

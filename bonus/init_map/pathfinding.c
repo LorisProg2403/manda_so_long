@@ -41,8 +41,8 @@ t_res	is_winnable(t_data data)
 {
 	visit_point(data.game->player.x, data.game->player.y, 0, data.game);
 	if (!data.game->exit_reached)
-		return (new_res(1, 7, "Can't reach the exit!\n", data));
+		return (new_res(1, 3, "Can't reach the exit!\n", data));
 	if (!data.game->items_reached)
-		return (new_res(1, 8, "Can't reach the items!\n", data));
+		return (new_res(1, 3, "Can't reach the items!\n", data));
 	return (new_res(0, 0, NULL, data));
 }

@@ -33,6 +33,11 @@
 // Data
 # define IMG_SIZE 50
 
+// Code
+# define MAP_NOT_OPEN 1
+# define MAP_ERROR 2
+# define PATHFINDING_ERROR 3
+
 // MAP CHARACTERS
 # define WALL '1'
 # define PATH '0'

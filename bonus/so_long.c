@@ -24,8 +24,24 @@ int	check_res(t_res res)
 {
 	if (res.state)
 	{
-		ft_printf(BRED"%s\n"RESET, res.msg);
-		return (1);
+		if (res.code == MAP_ERROR)
+		{
+			ft_printf(BRED"%s\n"RESET, res.msg);
+			return (1);
+		}
+		if (res.code == MAP_ERROR)
+		{
+			free_map(*res.data.game);
+			ft_printf(BRED"%s\n"RESET, res.msg);
+			return (1);
+		}
+		else
+		{
+			free_map(*res.data.game);
+			free_points(*res.data.game);
+			ft_printf(BRED"%s\n"RESET, res.msg);
+			return (1);
+		}
 	}
 	return (0);
 }
@@ -47,6 +63,5 @@ int	main(int ac, char **av)
 }
 /*TODO :
  * Handle error code from t_res to free the used memory
- * Change mlx functions for the size of the string
- * Multiple map ?
+ * Change pathfinding to handle TNT
  * Sprites for movement (Redraw all the map everytime ?)*/

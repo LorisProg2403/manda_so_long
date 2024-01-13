@@ -115,12 +115,12 @@ int	wall_around(char **map)
 t_res	check_map(t_data data)
 {
 	if (is_allowed(data.game->map))
-		return (new_res(1, 4, "Map has unallowed character(s)!\n", data));
+		return (new_res(1, 2, "Map has unallowed character(s)!\n", data));
 	if (is_correct(data.game->map))
-		return (new_res(1, 4, "Map doesn't follow the rules!\n", data));
+		return (new_res(1, 2, "Map doesn't follow the rules!\n", data));
 	if (is_rectangle(data.game->map))
-		return (new_res(1, 5, "Map should be a rectangle!\n", data));
+		return (new_res(1, 2, "Map should be a rectangle!\n", data));
 	if (wall_around(data.game->map))
-		return (new_res(1, 6, "Map should be surrounded by wall!\n", data));
+		return (new_res(1, 2, "Map should be surrounded by wall!\n", data));
 	return (new_res(0, 0, NULL, data));
 }

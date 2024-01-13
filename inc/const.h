@@ -27,6 +27,12 @@
 # define EXIT_IMG_PATH "./img/exit.xpm"
 # define ITEM_IMG_PATH "./img/apple.xpm"
 # define PLAYER_IMG_PATH "./img/player.xpm"
+
+// Code
+# define MAP_NOT_OPEN 1
+# define MAP_ERROR 2
+# define PATHFINDING_ERROR 3
+
 // Data
 # define IMG_SIZE 50
 
