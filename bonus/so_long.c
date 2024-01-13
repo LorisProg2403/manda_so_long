@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		ft_printf(BRED"More than one arguments\n"RESET);
+		ft_printf(BRED"Need only ONE argument\n"RESET);
 		return (1);
 	}
 	res = init_map(av[1], &data);
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 	start_game(&data);
 }
 /*TODO :
+ * Handle error code from t_res to free the used memory
  * Change mlx functions for the size of the string
- * Add win screen (full black and text ?)
  * Multiple map ?
  * Sprites for movement (Redraw all the map everytime ?)*/
