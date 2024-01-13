@@ -24,6 +24,17 @@ void	erase_text(t_data data)
 	}
 }
 
+char	*get_text(char *s, int n)
+{
+	char	*out;
+	char	*itoa;
+
+	itoa = ft_itoa(n);
+	out = ft_strjoin(s, itoa);
+	free(itoa);
+	return (out);
+}
+
 void	update_text(t_data data)
 {
 	int		y;
@@ -33,10 +44,10 @@ void	update_text(t_data data)
 
 	erase_text(data);
 	y = IMG_SIZE * (data.game->height + 1) + (IMG_SIZE / 2);
-	moves = ft_strjoin("MOVES : ", ft_itoa(data.game->moves));
+	moves = get_text("MOVES : ", data.game->moves);
 	if (data.game->items)
 	{
-		items = ft_strjoin("ITEMS TO COLLECT : ", ft_itoa(data.game->items));
+		items = get_text("ITEMS TO COLLECT : ", data.game->items);
 		color = 255;
 	}
 	else

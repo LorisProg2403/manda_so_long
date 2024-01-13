@@ -12,6 +12,26 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
+static char	*merge_text(char *s, char *alloc)
+{
+	char	*out;
+
+	out = ft_strjoin(s, alloc);
+	free(alloc);
+	return (out);
+}
+
+static char	*get_text(int n , char *s)
+{
+	char	*out;
+	char	*itoa;
+
+	itoa = ft_itoa(n);
+	out = ft_strjoin(itoa, s);
+	free(itoa);
+	return (out);
+}
+
 static void	clean_screen(t_data data)
 {
 	int	i;
@@ -35,7 +55,7 @@ static void	display_text(t_data data)
 	char	*move;
 	char	*info;
 
-	move = ft_strjoin("In ", ft_strjoin(ft_itoa(data.game->moves), " moves"));
+	move = merge_text("In ", get_text(data.game->moves, " moves"));
 	info = "Press [Q] or close the window to exit!";
 	mlx_string_put(data.mlx, data.win, IMG_SIZE * (data.game->width / 2),
 		IMG_SIZE * (data.game->height / 2), 65280, "YOU WON !");
