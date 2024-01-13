@@ -24,7 +24,7 @@ int	check_res(t_res res)
 {
 	if (res.state)
 	{
-		if (res.code == MAP_ERROR)
+		if (res.code == MAP_NOT_OPEN)
 		{
 			ft_printf(BRED"%s\n"RESET, res.msg);
 			return (1);
