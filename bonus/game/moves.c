@@ -60,6 +60,7 @@ void	move(t_data data, int add_x, int add_y)
 	data.game->moves++;
 	ft_printf("%d moves\n", data.game->moves);
 	handle_item(pos, add_x, add_y, data);
+	update_text(data);
 	new_img(data, pos.x, pos.y, PATH_IMG_PATH);
 	new_img(data, pos.x + add_x, pos.y + add_y, PLAYER_IMG_PATH);
 	data.game->player.x += add_x;

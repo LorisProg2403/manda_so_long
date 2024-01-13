@@ -21,10 +21,11 @@ void	start_game(t_data *data)
 
 	mlx_ini = mlx_init();
 	mlx_win = mlx_new_window(mlx_ini, IMG_SIZE * (data->game->width + 1),
-			IMG_SIZE * (data->game->height + 1), "SO_LONG");
+			IMG_SIZE * (data->game->height + 2), "SO_LONG");
 	data->mlx = mlx_ini;
 	data->win = mlx_win;
 	i = 0;
+	update_text(*data);
 	while (i <= data->game->height)
 	{
 		j = 0;

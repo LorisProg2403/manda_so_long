@@ -12,6 +12,15 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
+void	get_text_pos(t_game *game)
+{
+	int	quarter;
+
+	quarter = game->width / 4;
+	game->i_text_x = IMG_SIZE * (quarter * 3);
+	game->m_text_x = IMG_SIZE * quarter;
+}
+
 void	get_h_and_w(t_game *game)
 {
 	int	h;
@@ -55,4 +64,5 @@ void	set_map(t_game *game)
 	game->exit_reached = false;
 	game->items_reached = false;
 	set_points(game);
+	get_text_pos(game);
 }

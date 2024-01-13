@@ -38,6 +38,8 @@ typedef struct s_game
 	int			width;
 	int			moves;
 	int			items;
+	int			m_text_x;
+	int			i_text_x;
 	bool		exit_reached;
 	bool		items_reached;
 	t_point		**points;
