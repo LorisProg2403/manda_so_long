@@ -20,6 +20,7 @@
 # define KEY_D 2
 # define KEY_Q 12
 # define KEY_ESC 53
+# define KEY_ENTER 36
 
 // Images path
 # define WALL_IMG_PATH "./img/wall.xpm"

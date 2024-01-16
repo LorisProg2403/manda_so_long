@@ -78,15 +78,17 @@ int	handle_key(int key, t_data *data)
 		ft_printf(BBLUE"\nGame closed\n"RESET);
 		endgame(*data);
 	}
+	if (key == KEY_ENTER)
+		start_game(data);
 	if (data->game->is_over)
 		return (1);
-	if (key == KEY_W)
+	if (key == KEY_W && data->game->is_start)
 		move(*data, 0, -1);
-	if (key == KEY_A)
+	if (key == KEY_A && data->game->is_start)
 		move(*data, -1, 0);
-	if (key == KEY_S)
+	if (key == KEY_S && data->game->is_start)
 		move(*data, 0, 1);
-	if (key == KEY_D)
+	if (key == KEY_D && data->game->is_start)
 		move(*data, 1, 0);
 	return (0);
 }

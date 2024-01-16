@@ -12,18 +12,37 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
-void	start_game(t_data *data)
+void	load_game(t_data *data)
 {
-	int		i;
-	int		j;
 	void	*mlx_ini;
 	void	*mlx_win;
+	char	*rules;
+	char	*start;
 
+	rules = "Collect all the items to take the exit and win !";
+	start = "Press [ENTER] to start the game, Have fun !";
 	mlx_ini = mlx_init();
 	mlx_win = mlx_new_window(mlx_ini, IMG_SIZE * (data->game->width + 1),
 			IMG_SIZE * (data->game->height + 2), "SO_LONG");
 	data->mlx = mlx_ini;
 	data->win = mlx_win;
+	mlx_string_put(mlx_ini, mlx_win, IMG_SIZE * (data->game->width / 2 - 1),
+		IMG_SIZE * (data->game->height / 2), 255, "WELCOME IN SO_LONG !");
+	mlx_string_put(mlx_ini, mlx_win, IMG_SIZE * (data->game->width / 2 - 3),
+		IMG_SIZE * (data->game->height / 2 + 1), 255, rules);
+	mlx_string_put(mlx_ini, mlx_win, IMG_SIZE * (data->game->width / 2 - 2)
+		- 25, IMG_SIZE * (data->game->height / 2 + 2), 255, start);
+	mlx_key_hook((*data).win, handle_key, data);
+	mlx_hook(mlx_win, 17, 0, close_win, NULL);
+	mlx_loop(mlx_ini);
+}
+
+void	start_game(t_data *data)
+{
+	int		i;
+	int		j;
+
+	data->game->is_start = true;
 	i = 0;
 	update_text(*data);
 	while (i <= data->game->height)
@@ -36,7 +55,4 @@ void	start_game(t_data *data)
 		}
 		i++;
 	}
-	mlx_key_hook((*data).win, handle_key, data);
-	mlx_hook(mlx_win, 17, 0, close_win, NULL);
-	mlx_loop(mlx_ini);
 }

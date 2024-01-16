@@ -35,6 +35,7 @@ int		has_access(t_data data, t_point pos, int add_x, int add_y);
 void	move(t_data data, int add_x, int add_y);
 int		handle_key(int key, t_data *data);
 void	start_game(t_data *data);
+void	load_game(t_data *data);
 void	update_text(t_data data);
 void	victory(t_data data);
 void	lose(t_data data);

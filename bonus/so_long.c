@@ -59,7 +59,7 @@ int	main(int ac, char **av)
 	res = init_map(av[1], &data);
 	if (check_res(res))
 		return (1);
-	start_game(&data);
+	load_game(&data);
 }
 /*TODO :
  * Sprites for movement (Redraw all the map everytime ?)*/

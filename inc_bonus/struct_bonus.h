@@ -43,6 +43,7 @@ typedef struct s_game
 	bool		exit_reached;
 	bool		items_reached;
 	bool		is_over;
+	bool		is_start;
 	t_point		**points;
 	t_point		player;
 }	t_game;
