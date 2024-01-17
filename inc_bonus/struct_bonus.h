@@ -40,6 +40,7 @@ typedef struct s_game
 	int			items;
 	int			m_text_x;
 	int			i_text_x;
+	int			item_get;
 	bool		exit_reached;
 	bool		items_reached;
 	bool		is_over;

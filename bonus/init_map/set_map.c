@@ -65,6 +65,7 @@ void	set_map(t_game *game)
 	game->items_reached = false;
 	game->is_over = false;
 	game->is_start = false;
+	game->item_get = 0;
 	set_points(game);
 	get_text_pos(game);
 }

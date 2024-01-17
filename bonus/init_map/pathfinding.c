@@ -12,7 +12,7 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
-void	visit_point(int x, int y, int items, t_game *game)
+void	visit_point(int x, int y, t_game *game)
 {
 	t_point	p;
 
@@ -26,22 +26,25 @@ void	visit_point(int x, int y, int items, t_game *game)
 	if (p.visited)
 		return ;
 	if (p.value == ITEM)
-		items++;
+		game->item_get++;
 	if (p.value == EXIT)
+	{
 		game->exit_reached = true;
-	if (items == game->items)
+		return ;
+	}
+	if (game->item_get == game->items)
 		game->items_reached = true;
 	p.visited = true;
 	game->points[y][x] = p;
-	visit_point(x + 1, y, items, game);
-	visit_point(x - 1, y, items, game);
-	visit_point(x, y - 1, items, game);
-	visit_point(x, y + 1, items, game);
+	visit_point(x + 1, y, game);
+	visit_point(x - 1, y, game);
+	visit_point(x, y - 1, game);
+	visit_point(x, y + 1, game);
 }
 
 t_res	is_winnable(t_data data)
 {
-	visit_point(data.game->player.x, data.game->player.y, 0, data.game);
+	visit_point(data.game->player.x, data.game->player.y, data.game);
 	if (!data.game->exit_reached)
 		return (new_res(1, 3, "Can't reach the exit!\n", data));
 	if (!data.game->items_reached)

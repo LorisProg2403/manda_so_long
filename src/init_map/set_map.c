@@ -54,5 +54,6 @@ void	set_map(t_game *game)
 	game->items = 0;
 	game->exit_reached = false;
 	game->items_reached = false;
+	game->item_get = 0;
 	set_points(game);
 }
