@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 23:43:26 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/10 12:25:37 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/18 13:21:51 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_res	init_map(char *s, t_data *data)
 {
 	t_res	res;
 
+	data->game = malloc(sizeof(t_game));
 	if (get_map(s, data->game))
 		return (new_res(1, 1, "Can't open/find map!\n", *data));
 	res = check_map(*data);
