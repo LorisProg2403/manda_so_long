@@ -57,7 +57,6 @@ void	move_down(t_data data)
 	mlx_put_image_to_window(data.mlx, data.win,
 		data.game->player.sprites[3][i].img, corr.x, corr.y);
 	data.game->player.sprites_count++;
-	ft_wait(1000);
 }
 
 void	move_up(t_data data)
@@ -81,7 +80,6 @@ void	move_up(t_data data)
 	mlx_put_image_to_window(data.mlx, data.win,
 		data.game->player.sprites[2][i].img, corr.x, corr.y);
 	data.game->player.sprites_count++;
-	ft_wait(1000);
 }
 
 void	move_left(t_data data)
@@ -105,7 +103,6 @@ void	move_left(t_data data)
 	mlx_put_image_to_window(data.mlx, data.win,
 		data.game->player.sprites[1][i].img, corr.x, corr.y);
 	data.game->player.sprites_count++;
-	ft_wait(1000);
 }
 
 void	move_right(t_data data)
@@ -129,5 +126,4 @@ void	move_right(t_data data)
 	mlx_put_image_to_window(data.mlx, data.win,
 		data.game->player.sprites[0][i].img, corr.x, corr.y);
 	data.game->player.sprites_count++;
-	ft_wait(1000);
 }

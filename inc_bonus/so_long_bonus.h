@@ -26,7 +26,6 @@ void	free_sprites(t_data data);
 int		close_win(int n, void *params);
 t_res	new_res(bool state, int code, char *msg, t_data data);
 t_point	n_point(int x, int y, char value);
-void	ft_wait(int n);
 
 // GAME
 void	get_corr(t_point *c, t_point p, int width, int height);

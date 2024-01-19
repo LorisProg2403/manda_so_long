@@ -12,15 +12,6 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
-void	ft_wait(int n)
-{
-	int	i;
-
-	i = 0;
-	while (i <= n)
-		i++;
-}
-
 int	close_win(int n, void *params)
 {
 	(void)n;
