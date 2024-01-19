@@ -16,6 +16,7 @@ void	endgame(t_data data)
 {
 	free_points(*data.game);
 	free_map(*data.game);
+	free(res.data.game);
 	mlx_destroy_window(data.mlx, data.win);
 	exit(EXIT_SUCCESS);
 }
@@ -27,11 +28,13 @@ int	check_res(t_res res)
 		if (res.code == MAP_NOT_OPEN)
 		{
 			ft_printf(BRED"%s\n"RESET, res.msg);
+			free(res.data.game);
 			return (1);
 		}
 		if (res.code == MAP_ERROR)
 		{
 			free_map(*res.data.game);
+			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
 			return (1);
 		}
@@ -39,6 +42,7 @@ int	check_res(t_res res)
 		{
 			free_map(*res.data.game);
 			free_points(*res.data.game);
+			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
 			return (1);
 		}
