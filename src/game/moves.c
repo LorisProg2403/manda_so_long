@@ -22,6 +22,8 @@ int	has_access(t_data data, t_point pos, int add_x, int add_y)
 			return (0);
 		else
 		{
+			data.game->moves++;
+			ft_printf("%d moves\n", data.game->moves);
 			ft_printf(BGREEN"\nYou won in %d moves !\nWell played !\n"RESET,
 				data.game->moves);
 			endgame(data);

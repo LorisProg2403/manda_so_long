@@ -41,7 +41,7 @@ OBJ 	= $(patsubst $(SRC_PATH)%.c,$(OBJ_PATH)%.o,$(SRCS))
 
 SRC_BONUS 	= so_long
 SRC_BONUS	+= utils/res utils/points utils/frees utils/utils
-SRC_BONUS	+= game/img game/moves game/start_game game/text game/victory game/lose
+SRC_BONUS	+= game/img game/moves game/start_game game/text game/victory game/lose game/anim game/set_player game/anim_moves
 SRC_BONUS 	+= init_map/init_map init_map/get_map init_map/check_map init_map/set_map init_map/pathfinding
 SRCS_BONUS 	= $(addprefix $(SRC_BONUS_PATH), $(addsuffix .c, $(SRC_BONUS)))
 OBJ_BONUS 	= $(patsubst $(SRC_BONUS_PATH)%.c,$(OBJ_BONUS_PATH)%.o,$(SRCS_BONUS))

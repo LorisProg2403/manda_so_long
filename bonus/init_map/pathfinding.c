@@ -19,11 +19,7 @@ void	visit_point(int x, int y, t_game *game)
 	if (x < 0 || y < 0 || x > game->width || y > game->height)
 		return ;
 	p = game->points[y][x];
-	if (p.value == WALL)
-		return ;
-	if (p.value == TNT)
-		return ;
-	if (p.visited)
+	if (p.value == WALL || p.value == TNT || p.visited)
 		return ;
 	if (p.value == ITEM)
 		game->item_get++;
@@ -44,7 +40,7 @@ void	visit_point(int x, int y, t_game *game)
 
 t_res	is_winnable(t_data data)
 {
-	visit_point(data.game->player.x, data.game->player.y, data.game);
+	visit_point(data.game->player.pos.x, data.game->player.pos.y, data.game);
 	if (!data.game->exit_reached)
 		return (new_res(1, 3, "Can't reach the exit!\n", data));
 	if (!data.game->items_reached)

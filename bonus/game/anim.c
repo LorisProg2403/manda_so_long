@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   anim.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 12:25:53 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/12 12:25:54 by lgaume           ###   ########.fr       */
+/*   Created: 2024/01/19 14:58:38 by lgaume            #+#    #+#             */
+/*   Updated: 2024/01/19 14:58:41 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc_bonus/so_long_bonus.h"
 
-void	ft_wait(int n)
+int	anim(t_data data)
 {
-	int	i;
-
-	i = 0;
-	while (i <= n)
-		i++;
-}
-
-int	close_win(int n, void *params)
-{
-	(void)n;
-	(void)params;
-	ft_printf(BBLUE"\nGame closed\n"RESET);
-	exit(EXIT_SUCCESS);
+	if (!data.game->is_start || data.game->is_over)
+		return (1);
+	if (data.game->player.mov_down)
+		move_down(data);
+	if (data.game->player.mov_up)
+		move_up(data);
+	if (data.game->player.mov_left)
+		move_left(data);
+	if (data.game->player.mov_right)
+		move_right(data);
 	return (0);
 }

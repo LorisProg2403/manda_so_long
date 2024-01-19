@@ -16,7 +16,8 @@ void	endgame(t_data data)
 {
 	free_points(*data.game);
 	free_map(*data.game);
-	free(res.data.game);
+	free_sprites(data);
+	free(data.game);
 	mlx_destroy_window(data.mlx, data.win);
 	exit(EXIT_SUCCESS);
 }
@@ -29,22 +30,20 @@ int	check_res(t_res res)
 		{
 			ft_printf(BRED"%s\n"RESET, res.msg);
 			free(res.data.game);
-			return (1);
 		}
-		if (res.code == MAP_ERROR)
+		else if (res.code == MAP_ERROR)
 		{
 			free_map(*res.data.game);
 			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
-			return (1);
 		}
 		else
 		{
 			free_map(*res.data.game);
 			free_points(*res.data.game);
+			free_sprites(res.data);
 			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
-			return (1);
 		}
 	}
 	return (0);
@@ -66,4 +65,6 @@ int	main(int ac, char **av)
 	load_game(&data);
 }
 /*TODO :
- * Sprites for movement (Redraw all the map everytime ?)*/
+ * Size of the text
+ * Find Sprites for animations (10 by movements including the static one)
+ * Better win and lose screen ?*/

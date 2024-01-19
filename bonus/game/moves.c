@@ -43,6 +43,8 @@ int	has_access(t_data data, t_point pos, int add_x, int add_y)
 			return (0);
 		else
 		{
+			data.game->moves++;
+			ft_printf("%d moves\n", data.game->moves);
 			ft_printf(BGREEN"\nYou won in %d moves !\nWell played !\n"RESET,
 				data.game->moves);
 			victory(data);
@@ -56,19 +58,23 @@ void	move(t_data data, int add_x, int add_y)
 {
 	t_point	pos;
 
-	pos = data.game->player;
+	pos = data.game->player.pos;
 	if (handle_tnt(pos, add_x, add_y, data))
 		return ;
 	if (!has_access(data, pos, add_x, add_y))
 		return ;
 	data.game->moves++;
-	ft_printf("%d moves\n", data.game->moves);
 	handle_item(pos, add_x, add_y, data);
 	update_text(data);
-	new_img(data, pos.x, pos.y, PATH_IMG_PATH);
-	new_img(data, pos.x + add_x, pos.y + add_y, PLAYER_IMG_PATH);
-	data.game->player.x += add_x;
-	data.game->player.y += add_y;
+	ft_printf("%d moves\n", data.game->moves);
+	if (add_x == 1)
+		data.game->player.mov_right = true;
+	if (add_x == -1)
+		data.game->player.mov_left = true;
+	if (add_y == -1)
+		data.game->player.mov_up = true;
+	if (add_y == 1)
+		data.game->player.mov_down = true;
 }
 
 int	handle_key(int key, t_data *data)
@@ -78,17 +84,20 @@ int	handle_key(int key, t_data *data)
 		ft_printf(BBLUE"\nGame closed\n"RESET);
 		endgame(*data);
 	}
-	if (key == KEY_ENTER)
+	if (key == KEY_ENTER && !data->game->is_start)
 		start_game(data);
-	if (data->game->is_over)
+	if (data->game->is_over && !data->game->is_start)
 		return (1);
-	if (key == KEY_W && data->game->is_start)
+	if (data->game->player.mov_right || data->game->player.mov_left
+		|| data->game->player.mov_up || data->game->player.mov_down)
+		return (1);
+	if (key == KEY_W)
 		move(*data, 0, -1);
-	if (key == KEY_A && data->game->is_start)
+	if (key == KEY_A)
 		move(*data, -1, 0);
-	if (key == KEY_S && data->game->is_start)
+	if (key == KEY_S)
 		move(*data, 0, 1);
-	if (key == KEY_D && data->game->is_start)
+	if (key == KEY_D)
 		move(*data, 1, 0);
 	return (0);
 }

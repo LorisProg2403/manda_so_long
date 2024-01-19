@@ -30,6 +30,24 @@ typedef struct s_point
 	bool		visited;
 }	t_point;
 
+typedef struct s_img
+{
+	void		*img;
+	int			w;
+	int			h;
+}	t_img;
+
+typedef struct s_player
+{
+	bool		mov_right;
+	bool		mov_left;
+	bool		mov_up;
+	bool		mov_down;
+	int			sprites_count;
+	t_point		pos;
+	t_img		**sprites;
+}	t_player;
+
 typedef struct s_game
 {
 	char		**map;
@@ -46,7 +64,7 @@ typedef struct s_game
 	bool		is_over;
 	bool		is_start;
 	t_point		**points;
-	t_point		player;
+	t_player	player;
 }	t_game;
 
 typedef struct s_data

@@ -47,7 +47,7 @@ void	set_points(t_game *game)
 		{
 			game->points[i][j] = n_point(j, i, game->map[i][j]);
 			if (game->map[i][j] == PLAYER)
-				game->player = n_point(j, i, 'P');
+				game->player.pos = n_point(j, i, 'P');
 			if (game->map[i][j] == ITEM)
 				game->items++;
 			j++;
