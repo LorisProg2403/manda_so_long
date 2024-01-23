@@ -26,7 +26,7 @@
 # define WALL_IMG_PATH "./img/wall.xpm"
 # define PATH_IMG_PATH "./img/grass.xpm"
 # define EXIT_IMG_PATH "./img/exit.xpm"
-# define ITEM_IMG_PATH "./img/apple.xpm"
+# define ITEM_IMG_PATH "./img/bonus/coins/coins1.xpm"
 # define BLACK_IMG_PATH "./img/bonus/black.xpm"
 # define TNT_IMG_PATH "./img/bonus/tnt.xpm"
 
@@ -47,6 +47,13 @@
 # define UP_2 "./img/bonus/up/up2.xpm"
 # define UP_3 "./img/bonus/up/up3.xpm"
 # define UP_4 "./img/bonus/up/up4.xpm"
+
+# define COIN_1 "./img/bonus/coins/coins1.xpm"
+# define COIN_2 "./img/bonus/coins/coins2.xpm"
+# define COIN_3 "./img/bonus/coins/coins3.xpm"
+# define COIN_4 "./img/bonus/coins/coins4.xpm"
+# define COIN_5 "./img/bonus/coins/coins5.xpm"
+# define COIN_6 "./img/bonus/coins/coins6.xpm"
 
 // Data
 # define IMG_SIZE 50

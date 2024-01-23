@@ -26,7 +26,6 @@ void	load_game(t_data *data)
 			IMG_SIZE * (data->game->height + 2), "SO_LONG");
 	data->mlx = mlx_ini;
 	data->win = mlx_win;
-	set_player(*data);
 	mlx_string_put(mlx_ini, mlx_win, IMG_SIZE * (data->game->width / 2 - 1),
 		IMG_SIZE * (data->game->height / 2), 255, "WELCOME IN SO_LONG !");
 	mlx_string_put(mlx_ini, mlx_win, IMG_SIZE * (data->game->width / 2 - 3),
@@ -57,4 +56,6 @@ void	start_game(t_data *data)
 		}
 		i++;
 	}
+	set_player(*data);
+	set_item(*data);
 }

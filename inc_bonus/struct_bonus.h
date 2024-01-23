@@ -37,6 +37,12 @@ typedef struct s_img
 	int			h;
 }	t_img;
 
+typedef struct s_item
+{
+	int			sprites_count;
+	t_img		*sprites;
+}	t_item;
+
 typedef struct s_player
 {
 	bool		mov_right;
@@ -65,6 +71,7 @@ typedef struct s_game
 	bool		is_start;
 	t_point		**points;
 	t_player	player;
+	t_item		anim_item;
 }	t_game;
 
 typedef struct s_data

@@ -40,12 +40,16 @@ void	load_game(t_data *data);
 void	update_text(t_data data);
 void	victory(t_data data);
 void	lose(t_data data);
+
+//ANIM
 void	set_player(t_data data);
 int		anim(t_data data);
 void	move_down(t_data data);
 void	move_up(t_data data);
 void	move_right(t_data data);
 void	move_left(t_data data);
+void	set_item(t_data data);
+void	anim_item(t_data data, int x, int y);
 
 // INIT_MAP
 t_res	check_map(t_data data);

@@ -12,10 +12,30 @@
 
 #include "../../inc_bonus/so_long_bonus.h"
 
+void	check_item(t_data data)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i <= data.game->height)
+	{
+		j = 0;
+		while (j <= data.game->width)
+		{
+			if (data.game->points[i][j].value == 'C')
+				anim_item(data, j, i);
+			j++;
+		}
+		i++;
+	}
+}
+
 int	anim(t_data data)
 {
 	if (!data.game->is_start || data.game->is_over)
 		return (1);
+	check_item(data);
 	if (data.game->player.mov_down)
 		move_down(data);
 	if (data.game->player.mov_up)
