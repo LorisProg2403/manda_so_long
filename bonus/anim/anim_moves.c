@@ -6,13 +6,37 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 19:28:47 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/23 11:29:28 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/23 11:46:18 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc_bonus/so_long_bonus.h"
 
 void	get_corr_anim(t_point *c, t_point p, int i, char move)
+{
+	if (move == 'R')
+	{
+		(*c).x = p.x * IMG_SIZE + 3 + (2 * (i + 1));
+		(*c).y = p.y * IMG_SIZE + 3;
+	}
+	if (move == 'L')
+	{
+		(*c).x = p.x * IMG_SIZE + 3 - (2 * (i + 1));
+		(*c).y = p.y * IMG_SIZE + 3;
+	}
+	if (move == 'D')
+	{
+		(*c).x = p.x * IMG_SIZE + 3;
+		(*c).y = p.y * IMG_SIZE + 3 + (2 * (i + 1));
+	}
+	if (move == 'U')
+	{
+		(*c).x = p.x * IMG_SIZE + 3;
+		(*c).y = p.y * IMG_SIZE + 3 - (2 * (i + 1));
+	}
+}
+
+/*void	get_corr_anim(t_point *c, t_point p, int i, char move)
 {
 	if (move == 'R')
 	{
@@ -34,14 +58,14 @@ void	get_corr_anim(t_point *c, t_point p, int i, char move)
 		(*c).x = p.x * IMG_SIZE + 3;
 		(*c).y = p.y * IMG_SIZE + 4 - i;
 	}
-}
+}*/
 
 void	move_down(t_data *data)
 {
 	t_point	corr;
 	int		i;
 
-	if (data->game->player.sprites_count == 50)
+	if (data->game->player.sprites_count == 25)
 	{
 		data->game->player.sprites_count = 0;
 		data->game->player.mov_down = false;
@@ -64,7 +88,7 @@ void	move_up(t_data *data)
 	t_point	corr;
 	int		i;
 
-	if (data->game->player.sprites_count == 50)
+	if (data->game->player.sprites_count == 25)
 	{
 		data->game->player.sprites_count = 0;
 		data->game->player.mov_up = false;
@@ -87,7 +111,7 @@ void	move_left(t_data *data)
 	t_point	corr;
 	int		i;
 
-	if (data->game->player.sprites_count == 50)
+	if (data->game->player.sprites_count == 25)
 	{
 		data->game->player.sprites_count = 0;
 		data->game->player.mov_left = false;
@@ -110,7 +134,7 @@ void	move_right(t_data *data)
 	t_point	corr;
 	int		i;
 
-	if (data->game->player.sprites_count == 50)
+	if (data->game->player.sprites_count == 25)
 	{
 		data->game->player.sprites_count = 0;
 		data->game->player.mov_right = false;

@@ -3,14 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   set_player.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 18:41:25 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/19 18:41:27 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/23 11:43:09 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc_bonus/so_long_bonus.h"
+
+/*void	set_img_down(t_data data, t_player *p)
+{
+	int	i;
+
+	p->sprites[3] = malloc(sizeof(t_img) * 25);
+	i = 0;
+	while (i < 10)
+	{
+		p->sprites[3][i].img = mlx_xpm_file_to_image(data.mlx,
+				DOWN_1, &p->sprites[3][i].w, &p->sprites[3][i].h);
+		p->sprites[3][i + 5].img = mlx_xpm_file_to_image(data.mlx,
+				DOWN_2, &p->sprites[3][i + 5].w, &p->sprites[3][i + 5].h);
+		p->sprites[3][i + 10].img = mlx_xpm_file_to_image(data.mlx,
+				DOWN_3, &p->sprites[3][i + 10].w, &p->sprites[3][i + 10].h);
+		p->sprites[3][i + 15].img = mlx_xpm_file_to_image(data.mlx,
+				DOWN_4, &p->sprites[3][i + 15].w, &p->sprites[3][i + 15].h);
+		p->sprites[3][i + 20].img = mlx_xpm_file_to_image(data.mlx,
+				DOWN_1, &p->sprites[3][i + 20].w, &p->sprites[3][i + 20].h);
+		i++;
+	}
+}*/
 
 void	set_img_down(t_data data, t_player *p)
 {
