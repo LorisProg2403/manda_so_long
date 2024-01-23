@@ -16,23 +16,23 @@ void	get_corr_anim(t_point *c, t_point p, int i, char move)
 {
 	if (move == 'R')
 	{
-		(*c).x = p.x * IMG_SIZE + 11 + i + 1;
+		(*c).x = p.x * IMG_SIZE + 4 + i;
 		(*c).y = p.y * IMG_SIZE + 3;
 	}
 	if (move == 'L')
 	{
-		(*c).x = p.x * IMG_SIZE + 11 - i + 1;
+		(*c).x = p.x * IMG_SIZE + 4 - i;
 		(*c).y = p.y * IMG_SIZE + 3;
 	}
 	if (move == 'D')
 	{
-		(*c).x = p.x * IMG_SIZE + 11;
-		(*c).y = p.y * IMG_SIZE + 3 + i + 1;
+		(*c).x = p.x * IMG_SIZE + 3;
+		(*c).y = p.y * IMG_SIZE + 4 + i;
 	}
 	if (move == 'U')
 	{
-		(*c).x = p.x * IMG_SIZE + 11;
-		(*c).y = p.y * IMG_SIZE + 3 - i + 1;
+		(*c).x = p.x * IMG_SIZE + 3;
+		(*c).y = p.y * IMG_SIZE + 4 - i;
 	}
 }
 

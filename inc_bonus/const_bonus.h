@@ -27,9 +27,26 @@
 # define PATH_IMG_PATH "./img/grass.xpm"
 # define EXIT_IMG_PATH "./img/exit.xpm"
 # define ITEM_IMG_PATH "./img/apple.xpm"
-# define PLAYER_IMG_PATH "./img/player.xpm"
 # define BLACK_IMG_PATH "./img/bonus/black.xpm"
 # define TNT_IMG_PATH "./img/bonus/tnt.xpm"
+
+# define PLAYER_IMG_PATH "./img/bonus/player.xpm"
+# define RIGHT_1 "./img/bonus/right/right1.xpm"
+# define RIGHT_2 "./img/bonus/right/right2.xpm"
+# define RIGHT_3 "./img/bonus/right/right3.xpm"
+# define RIGHT_4 "./img/bonus/right/right4.xpm"
+# define LEFT_1 "./img/bonus/left/left1.xpm"
+# define LEFT_2 "./img/bonus/left/left2.xpm"
+# define LEFT_3 "./img/bonus/left/left3.xpm"
+# define LEFT_4 "./img/bonus/left/left4.xpm"
+# define DOWN_1 "./img/bonus/down/down1.xpm"
+# define DOWN_2 "./img/bonus/down/down2.xpm"
+# define DOWN_3 "./img/bonus/down/down3.xpm"
+# define DOWN_4 "./img/bonus/down/down4.xpm"
+# define UP_1 "./img/bonus/up/up1.xpm"
+# define UP_2 "./img/bonus/up/up2.xpm"
+# define UP_3 "./img/bonus/up/up3.xpm"
+# define UP_4 "./img/bonus/up/up4.xpm"
 
 // Data
 # define IMG_SIZE 50
