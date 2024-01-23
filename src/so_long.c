@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 22:29:55 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/10 13:00:20 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/23 11:32:02 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	endgame(t_data data)
 {
 	free_points(*data.game);
 	free_map(*data.game);
-	free(res.data.game);
+	free(data.game);
 	mlx_destroy_window(data.mlx, data.win);
 	exit(EXIT_SUCCESS);
 }

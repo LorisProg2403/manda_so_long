@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 15:53:15 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/10 13:08:51 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/23 11:26:16 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	load_game(t_data *data)
 		- 25, IMG_SIZE * (data->game->height / 2 + 2), 255, start);
 	mlx_key_hook((*data).win, handle_key, data);
 	mlx_hook(mlx_win, 17, 0, close_win, NULL);
-	mlx_loop_hook(mlx_ini, anim, data);
+	mlx_loop_hook((*data).mlx, anim, data);
 	mlx_loop(mlx_ini);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:30:58 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/12 12:31:00 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/01/23 11:34:33 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	endgame(t_data data)
 {
 	free_points(*data.game);
 	free_map(*data.game);
-	free_sprites(data);
+	if (data.game->is_start)
+		free_sprites(data);
 	free(data.game);
 	mlx_destroy_window(data.mlx, data.win);
 	exit(EXIT_SUCCESS);
