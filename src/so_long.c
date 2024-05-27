@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 22:29:55 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/23 11:32:02 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/05/27 09:45:59 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,19 @@ int	check_res(t_res res)
 	return (0);
 }
 
+int	test_ber(char *map)
+{
+	char	*last_dot;
+
+	if (!map)
+		return (1);
+	last_dot = ft_strrchr(map, '.');
+	if (last_dot && !ft_strcmp(last_dot, ".ber"))
+		return (0);
+	else
+		return (1);
+}
+
 int	main(int ac, char **av)
 {
 	t_res	res;
@@ -57,7 +70,12 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		ft_printf(BRED"More than one arguments\n"RESET);
+		ft_printf(BRED"Need one argument\n"RESET);
+		return (1);
+	}
+	if (test_ber(av[1]))
+	{
+		ft_printf(BRED"Map must be a .ber file\n"RESET);
 		return (1);
 	}
 	res = init_map(av[1], &data);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:30:58 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/23 11:34:33 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/05/27 09:47:18 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,19 @@ int	check_res(t_res res)
 	return (0);
 }
 
+int	test_ber(char *map)
+{
+	char	*last_dot;
+
+	if (!map)
+		return (1);
+	last_dot = ft_strrchr(map, '.');
+	if (last_dot && !ft_strcmp(last_dot, ".ber"))
+		return (0);
+	else
+		return (1);
+}
+
 int	main(int ac, char **av)
 {
 	t_res	res;
@@ -60,12 +73,13 @@ int	main(int ac, char **av)
 		ft_printf(BRED"Need only ONE argument\n"RESET);
 		return (1);
 	}
+	if (test_ber(av[1]))
+	{
+		ft_printf(BRED"Map must be a .ber file\n"RESET);
+		return (1);
+	}
 	res = init_map(av[1], &data);
 	if (check_res(res))
 		return (1);
 	load_game(&data);
 }
-/*TODO :
- * Size of the text
- * Find Sprites for animations (10 by movements including the static one)
- * Better win and lose screen ?*/
