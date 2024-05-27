@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 22:29:55 by lgaume            #+#    #+#             */
-/*   Updated: 2024/05/27 09:45:59 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/05/27 15:42:37 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	endgame(t_data data)
 {
-	free_points(*data.game);
-	free_map(*data.game);
+	free_points(data.game);
+	free_map(data.game);
 	free(data.game);
 	mlx_destroy_window(data.mlx, data.win);
 	exit(EXIT_SUCCESS);
@@ -33,15 +33,16 @@ int	check_res(t_res res)
 		}
 		if (res.code == MAP_ERROR)
 		{
-			free_map(*res.data.game);
+			free_map(res.data.game);
+			free_points(res.data.game);
 			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
 			return (1);
 		}
 		else
 		{
-			free_map(*res.data.game);
-			free_points(*res.data.game);
+			free_map(res.data.game);
+			free_points(res.data.game);
 			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
 			return (1);

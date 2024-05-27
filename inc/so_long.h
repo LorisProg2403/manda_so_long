@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 22:08:21 by lgaume            #+#    #+#             */
-/*   Updated: 2023/12/23 22:08:21 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/05/27 15:42:07 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ t_res		is_winnable(t_data data);
 // UTILS
 t_res		new_res(bool state, int code, char *msg, t_data data);
 t_point		n_point(int x, int y, char value);
-void		free_points(t_game game);
-void		free_map(t_game game);
+void		free_points(t_game *game);
+void		free_map(t_game *game);
 int			close_win(int n, void *params);
 
 // GAME
