@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 15:53:28 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/23 11:32:41 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/03 03:12:08 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	handle_key(int key, t_data *data)
 	if (key == KEY_Q || key == KEY_ESC)
 	{
 		ft_printf(BBLUE"\nGame closed\n"RESET);
-		endgame(*data);
+		endgame(data);
 	}
 	if (key == KEY_ENTER && !data->game->is_start)
 		start_game(data);

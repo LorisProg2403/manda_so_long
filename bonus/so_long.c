@@ -6,20 +6,20 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:30:58 by lgaume            #+#    #+#             */
-/*   Updated: 2024/05/27 09:47:18 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/03 16:42:15 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_bonus/so_long_bonus.h"
 
-void	endgame(t_data data)
+void	endgame(t_data *data)
 {
-	free_points(*data.game);
-	free_map(*data.game);
-	if (data.game->is_start)
+	free_points(data->game);
+	free_map(data->game);
+	if (data->game->is_start)
 		free_sprites(data);
-	free(data.game);
-	mlx_destroy_window(data.mlx, data.win);
+	free(data->game);
+	mlx_destroy_window(data->mlx, data->win);
 	exit(EXIT_SUCCESS);
 }
 
@@ -34,15 +34,16 @@ int	check_res(t_res res)
 		}
 		else if (res.code == MAP_ERROR)
 		{
-			free_map(*res.data.game);
+			free_map(res.data.game);
+			free_points(res.data.game);
 			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
 		}
 		else
 		{
-			free_map(*res.data.game);
-			free_points(*res.data.game);
-			free_sprites(res.data);
+			free_map(res.data.game);
+			free_points(res.data.game);
+			free_sprites(&res.data);
 			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
 		}

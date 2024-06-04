@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:31:35 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/23 11:28:00 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/03 03:00:26 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # include <fcntl.h>
 
 // UTILS
-void	free_points(t_game game);
-void	free_map(t_game game);
-void	free_sprites(t_data data);
+void	free_points(t_game *game);
+void	free_map(t_game *game);
+void	free_sprites(t_data *data);
 int		close_win(int n, void *params);
 t_res	new_res(bool state, int code, char *msg, t_data data);
 t_point	n_point(int x, int y, char value);
@@ -58,6 +58,6 @@ t_res	init_map(char *s, t_data *data);
 t_res	is_winnable(t_data data);
 void	set_map(t_game *game);
 // SO_LONG.C
-void	endgame(t_data data);
+void	endgame(t_data *data);
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
+#    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/23 22:02:45 by lgaume            #+#    #+#              #
-#    Updated: 2024/05/27 12:22:42 by lgaume           ###   ########.fr        #
+#    Updated: 2024/06/03 03:33:17 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ bonus:					$(OBJ_BONUS)
 						@echo "$(BLUE)[✓] MLX compiled$(RESET)"
 						@make -C ./libft
 						@echo "$(BLUE)[✓] Libft compiled$(RESET)"
-						@$(CC) $(FLAGS) -I $(INC_BONUS) $(OBJ_BONUS) $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME_BONUS)
+						@$(CC) $(FLAGS) -fsanitize=address -g -I $(INC_BONUS) $(OBJ_BONUS) $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME_BONUS)
 						@echo "$(GREEN)[✓] so_long_bonus compiled$(RESET)"
 
 $(OBJ_BONUS_PATH)%.o: 	$(SRC_BONUS_PATH)%.c
@@ -118,6 +118,5 @@ norm:
 						@echo "$(CYAN)\nNorm of src :"
 						@norminette src/
 						@norminette bonus/
-
 
 .PHONY:					all clean fclean re mlx mlx_clean libft libft_clean make_all clean_all norm norm_libft bonus bonus_fclean bonus_clean bonus_re bonus_clean_all bonus_make_all
