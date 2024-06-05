@@ -6,13 +6,26 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 15:59:23 by lgaume            #+#    #+#             */
-/*   Updated: 2024/06/04 21:43:15 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/05 07:45:27 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc_bonus/so_long_bonus.h"
 
-void	free_sprites(t_data *data)
+void	free_item(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < 42)
+	{
+		mlx_destroy_image(data->mlx, data->game->anim_item.sprites[i].img);
+		i++;
+	}
+	free(data->game->anim_item.sprites);
+}
+
+void	free_player(t_data *data)
 {
 	int	i;
 	int	j;

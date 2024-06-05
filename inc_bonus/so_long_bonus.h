@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:31:35 by lgaume            #+#    #+#             */
-/*   Updated: 2024/06/03 03:00:26 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/05 07:38:57 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 // UTILS
 void	free_points(t_game *game);
 void	free_map(t_game *game);
-void	free_sprites(t_data *data);
+void	free_player(t_data *data);
+void	free_item(t_data *data);
 int		close_win(int n, void *params);
 t_res	new_res(bool state, int code, char *msg, t_data data);
 t_point	n_point(int x, int y, char value);

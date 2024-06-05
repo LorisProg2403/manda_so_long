@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:30:58 by lgaume            #+#    #+#             */
-/*   Updated: 2024/06/03 16:42:15 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/05 07:43:29 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	endgame(t_data *data)
 	free_points(data->game);
 	free_map(data->game);
 	if (data->game->is_start)
-		free_sprites(data);
+	{
+		free_player(data);
+		free_item(data);
+	}
 	free(data->game);
 	mlx_destroy_window(data->mlx, data->win);
 	exit(EXIT_SUCCESS);
@@ -43,7 +46,8 @@ int	check_res(t_res res)
 		{
 			free_map(res.data.game);
 			free_points(res.data.game);
-			free_sprites(&res.data);
+			free_player(&res.data);
+			free_item(&res.data);
 			free(res.data.game);
 			ft_printf(BRED"%s\n"RESET, res.msg);
 		}
