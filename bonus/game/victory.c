@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   victory.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:48:34 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/13 11:48:35 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/05 10:41:22 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ static char	*get_text(int n, char *s)
 	return (out);
 }
 
-static void	clean_screen(t_data data)
+static void	clean_screen(t_data *data)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i <= data.game->height + 1)
+	while (i <= data->game->height + 1)
 	{
 		j = 0;
-		while (j <= data.game->width + 1)
+		while (j <= data->game->width + 1)
 		{
 			new_img(data, j, i, BLACK_IMG_PATH);
 			j++;
@@ -66,9 +66,9 @@ static void	display_text(t_data data)
 	free(move);
 }
 
-void	victory(t_data data)
+void	victory(t_data *data)
 {
 	clean_screen(data);
 	display_text(data);
-	data.game->is_over = true;
+	data->game->is_over = true;
 }

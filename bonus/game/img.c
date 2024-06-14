@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   img.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 15:50:17 by lgaume            #+#    #+#             */
-/*   Updated: 2023/12/25 15:50:19 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/05 10:41:35 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	get_corr(t_point *c, t_point p, int width, int height)
 	}
 }
 
-void	new_img(t_data data, int x, int y, char *path)
+void	new_img(t_data *data, int x, int y, char *path)
 {
 	int		img_w;
 	int		img_h;
@@ -74,7 +74,7 @@ char	*get_path(t_point p)
 	return (PATH_IMG_PATH);
 }
 
-void	add_img(t_data data, int x, int y, t_point p)
+void	add_img(t_data *data, int x, int y, t_point p)
 {
 	if (p.value == EXIT || p.value == ITEM || p.value == PLAYER
 		||p.value == TNT)

@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:31:35 by lgaume            #+#    #+#             */
-/*   Updated: 2024/06/05 07:38:57 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/05 10:30:17 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void	victory(t_data data);
 void	lose(t_data data);
 
 //ANIM
-void	set_player(t_data data);
+void	set_player(t_data *data);
 int		anim(t_data *data);
 void	move_down(t_data *data);
 void	move_up(t_data *data);
 void	move_right(t_data *data);
 void	move_left(t_data *data);
-void	set_item(t_data data);
+void	set_item(t_data *data);
 void	anim_item(t_data data, int x, int y);
 
 // INIT_MAP

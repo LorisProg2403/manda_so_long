@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 15:53:15 by lgaume            #+#    #+#             */
-/*   Updated: 2024/01/23 11:26:16 by lgaume           ###   ########.fr       */
+/*   Updated: 2024/06/05 10:30:21 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	start_game(t_data *data)
 		}
 		i++;
 	}
-	set_player(*data);
-	set_item(*data);
+	set_player(data);
+	set_item(data);
 }
